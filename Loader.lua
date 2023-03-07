@@ -1,10 +1,10 @@
-if game.PlaceId == 6839171747 then
-    local floor = game:GetService("ReplicatedStorage").GameData.Floor.Value
+local games = {
+    [{6839171747}] = ""
+}
 
-    if floor == "Hotel" then
-        loadstring(game:HttpGet(""))()
-
-    elseif floor == "Rooms" then
-        loadstring(game:HttpGet(""))()
+for ids, url in next, games do
+    if table.find(ids, game.PlaceId) then
+        loadstring(game:HttpGet(url))()
+        break
     end
 end
